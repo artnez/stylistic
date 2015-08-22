@@ -96,6 +96,6 @@ export function extract(props) {
 
   const {transform, attributes} = getTransform(attrs);
   transform && (style.transform = transform);
-  attributes.style = style;
+  attributes.style = {...style, ...attributes.style};
   return attributes;
 }
